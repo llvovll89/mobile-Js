@@ -81,7 +81,6 @@
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    overflow: hidden;
     /* display: block; */
     opacity: 1;
 }
@@ -98,11 +97,13 @@ ion-icon {
     display: flex;
     gap: 4.9rem;
     transition: 1s;
+    display: none;
 }
 
 .display.active .content {
     gap: .5rem;
-    transition: 1s
+    display: block;
+    transition: display 1s;
 }
 
 .display.active .content ion-icon,
@@ -115,3 +116,34 @@ ion-icon {
     margin: 10px;
     transition: 1s;
 }
+
+.display.active .one, .two, .three, .four{
+    animation: moveOn 2s linear;
+    animation-fill-mode:forwards;
+    animation-iteration-count: 1;
+}
+
+.one {
+    animation-delay: 1s;
+}
+
+.two {
+    animation-delay: 1.5s;
+}
+
+.three {
+    animation-delay: 2s;
+}
+
+.four {
+    animation-delay: 2.5s;
+}
+
+@keyframes moveOn {
+    from {
+      transform: translateY(-500px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
