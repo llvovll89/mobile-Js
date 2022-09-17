@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 95%;
+    width: 500px;
+    height: 600px;
+    background: #030303;
+    border-radius: 30px;
+    transition: width 1s;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    width: 480px;
+    height: 580px;
+    background: #f3e3ff;
+    border-radius: 30px;
+    background-image: url(img1.png);
+    background-position: center;
+    background-size: cover;
+    max-width: 95%;
+}
+
+.container.active {
+    width: 250px;
+    transition: width 1s;
+}
+
+.container.active > .container::before {
+    display: none;
+}
+
+.display {
+    position: relative;
+    max-width: 98%;
+    width: 490px;
+    height: 590px;
+    border: 2px solid rgba(0, 0, 0, .25);
+    background: #ffffff;
+    border-radius: 30px;
+    transition: 1s;
+    /* display: none; */
+    opacity: 0;
+}
+
+.display .topIcon {
+    position: absolute;
+    display: flex;
+    gap: 1rem;
+    top: 8px;
+    right: 20px;
+    font-size: 2rem;
+}
+
+.display .topIcon ion-icon {
+    transition: 1s;
+}
+
+.display.active {
+    position: relative;
+    width: 240px;
+    transition: width opacity background-image 1s;
+    background-image: url(img2.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    /* display: block; */
+    opacity: 1;
+}
+
+ion-icon {
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.content {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    display: flex;
+    gap: 4.9rem;
+    transition: 1s;
+}
+
+.display.active .content {
+    gap: .5rem;
+    transition: 1s
+}
+
+.display.active .content ion-icon,
+.display.active .topIcon ion-icon {
+    font-size: 1.5rem;
+    transition: 1s;
+}
+
+.content ion-icon {
+    margin: 10px;
+    transition: 1s;
+}
