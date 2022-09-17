@@ -30,7 +30,7 @@
     position: absolute;
     width: 480px;
     height: 580px;
-    background: #f3e3ff;
+    background: rgb(173, 218, 236);
     border-radius: 30px;
     background-image: url(img1.png);
     background-position: center;
@@ -39,24 +39,18 @@
 }
 
 .container.active {
-    width: 250px;
+    width: 300px;
     transition: width 1s;
-}
-
-.container.active > .container::before {
-    display: none;
 }
 
 .display {
     position: relative;
-    max-width: 98%;
-    width: 490px;
+    width: 495px;
     height: 590px;
     border: 2px solid rgba(0, 0, 0, .25);
     background: #ffffff;
     border-radius: 30px;
     transition: 1s;
-    /* display: none; */
     opacity: 0;
 }
 
@@ -75,7 +69,7 @@
 
 .display.active {
     position: relative;
-    width: 240px;
+    width: 290px;
     transition: width opacity background-image 1s;
     background-image: url(img2.png);
     background-position: center;
@@ -93,16 +87,13 @@ ion-icon {
 .content {
     position: absolute;
     bottom: 0;
+    width: 100%;
     padding: 20px;
     display: flex;
-    gap: 4.9rem;
-    transition: 1s;
-    display: none;
 }
 
 .display.active .content {
-    gap: .5rem;
-    display: block;
+    gap: 1rem;
     transition: display 1s;
 }
 
@@ -113,9 +104,10 @@ ion-icon {
 }
 
 .content ion-icon {
-    margin: 10px;
+    margin: 10px auto;
     transition: 1s;
 }
+
 
 .display.active .one, .two, .three, .four{
     animation: moveOn 2s linear;
